@@ -1,0 +1,1555 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Titan Sovereign Substrate — Technical Whitepaper & Strategic Investment Brief</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        titan: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            900: '#111827',
+                            950: '#030712',
+                            accent: '#00f0ff',
+                            purple: '#8b5cf6',
+                            gold: '#f59e0b'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #030712;
+            color: #f3f4f6;
+            overflow-x: hidden;
+        }
+
+        .code-font {
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.7);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card-titan {
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(13, 148, 136, 0.1) 0%,
+                    rgba(3, 7, 18, 0.6) 100%
+                );
+            border: 1px solid rgba(0, 240, 255, 0.25);
+        }
+
+        .glow-accent {
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.12);
+        }
+
+        .investment-glow {
+            box-shadow:
+                0 0 35px rgba(0, 240, 255, 0.10),
+                inset 0 0 30px rgba(0, 240, 255, 0.03);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #030712;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1f2937;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #374151;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #00f0ff, #14b8a6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen antialiased selection:bg-cyan-500 selection:text-black">
+
+    <!-- ========================================================= -->
+    <!-- NAVIGATION -->
+    <!-- ========================================================= -->
+
+    <header class="sticky top-0 z-50 glass-panel border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+
+            <div class="flex items-center gap-3">
+
+                <div class="h-8 w-8 rounded-lg bg-gradient-to-br from-cyan-400 to-teal-600 flex items-center justify-center font-bold text-black text-lg">
+                    T
+                </div>
+
+                <div>
+                    <span class="font-bold text-white tracking-wide text-lg">
+                        TITAN SOVEREIGN SUBSTRATE
+                    </span>
+
+                    <span class="text-xs text-cyan-400 font-mono ml-2 px-2 py-0.5 rounded bg-cyan-950/80 border border-cyan-800">
+                        TSS-2026 // STRATEGIC BRIEF
+                    </span>
+                </div>
+
+            </div>
+
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-300">
+                <a href="#overview" class="hover:text-cyan-400 transition-colors">Overview</a>
+                <a href="#architecture" class="hover:text-cyan-400 transition-colors">Architecture</a>
+                <a href="#primitives" class="hover:text-cyan-400 transition-colors">Primitives</a>
+                <a href="#bypasses" class="hover:text-cyan-400 transition-colors">Edge Runtime</a>
+                <a href="#opportunity" class="hover:text-cyan-400 transition-colors">Opportunity</a>
+                <a href="#roi" class="hover:text-cyan-400 transition-colors">ROI Framework</a>
+                <a href="#ip" class="hover:text-cyan-400 transition-colors">IP</a>
+            </nav>
+
+            <div class="hidden sm:flex items-center gap-3">
+
+                <span class="px-3 py-1 rounded bg-gray-900 border border-gray-700 font-mono text-xs text-cyan-400">
+                    2026
+                </span>
+
+            </div>
+
+        </div>
+    </header>
+
+
+    <!-- ========================================================= -->
+    <!-- HERO -->
+    <!-- ========================================================= -->
+
+    <section class="relative py-16 lg:py-24 overflow-hidden border-b border-gray-800/60">
+
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(0,240,255,0.15),rgba(255,255,255,0))]"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gray-900 border border-gray-700 text-xs text-gray-300 mb-6 font-mono">
+
+                <span class="flex h-2 w-2 rounded-full bg-cyan-400 animate-pulse"></span>
+
+                TECHNICAL ARCHITECTURE + STRATEGIC INVESTMENT BRIEF
+
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight text-white max-w-6xl leading-tight">
+
+                The Titan Sovereign Substrate
+
+                <span class="block gradient-text">
+                    Infrastructure Already Built.
+                </span>
+
+            </h1>
+
+            <p class="mt-6 text-lg sm:text-xl text-gray-400 max-w-5xl leading-relaxed">
+
+                Titan is a local-first, edge-computing software substrate engineered around
+                sovereign execution, cryptographic verification, peer-to-peer infrastructure,
+                local AI inference, and containerless deployment across commodity hardware.
+
+                The opportunity is not to fund an idea from zero.
+
+                <strong class="text-white">
+                    The opportunity is to help turn an existing technical foundation into a sustainable company.
+                </strong>
+
+            </p>
+
+
+            <!-- QUICK STATS -->
+
+            <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 font-mono text-xs">
+
+                <div class="p-4 rounded-xl glass-panel border border-gray-800">
+
+                    <span class="text-gray-500 block mb-1">
+                        CODEBASE
+                    </span>
+
+                    <span class="text-xl font-bold text-white">
+                        128+ Repos
+                    </span>
+
+                    <span class="text-gray-400 block text-[10px] mt-1">
+                        Multi-project technical portfolio
+                    </span>
+
+                </div>
+
+
+                <div class="p-4 rounded-xl glass-panel border border-gray-800">
+
+                    <span class="text-gray-500 block mb-1">
+                        ARCHITECTURE
+                    </span>
+
+                    <span class="text-xl font-bold text-cyan-400">
+                        Rust / Zig / Go / C
+                    </span>
+
+                    <span class="text-gray-400 block text-[10px] mt-1">
+                        Systems-oriented stack
+                    </span>
+
+                </div>
+
+
+                <div class="p-4 rounded-xl glass-panel border border-gray-800">
+
+                    <span class="text-gray-500 block mb-1">
+                        TARGET
+                    </span>
+
+                    <span class="text-xl font-bold text-teal-400">
+                        Edge + Local AI
+                    </span>
+
+                    <span class="text-gray-400 block text-[10px] mt-1">
+                        Commodity hardware
+                    </span>
+
+                </div>
+
+
+                <div class="p-4 rounded-xl glass-panel border border-gray-800">
+
+                    <span class="text-gray-500 block mb-1">
+                        STRATEGIC NEED
+                    </span>
+
+                    <span class="text-xl font-bold text-purple-400">
+                        Go-To-Market
+                    </span>
+
+                    <span class="text-gray-400 block text-[10px] mt-1">
+                        Distribution, stability & commercialization
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- CORE THESIS -->
+    <!-- ========================================================= -->
+
+    <section id="overview" class="py-16 border-b border-gray-800/60 bg-gray-950/40">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="max-w-4xl">
+
+                <h2 class="text-xs font-mono text-cyan-400 tracking-widest uppercase mb-2">
+                    // 01. THE THESIS
+                </h2>
+
+                <h3 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                    This is an infrastructure problem, not an idea problem.
+                </h3>
+
+            </div>
+
+
+            <div class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+                <div class="p-7 rounded-2xl glass-panel border border-gray-800 space-y-5">
+
+                    <h4 class="text-xl font-bold text-white flex items-center gap-2">
+
+                        <i data-lucide="cpu" class="text-cyan-400 w-5 h-5"></i>
+
+                        Built by an engineer
+
+                    </h4>
+
+                    <p class="text-sm text-gray-300 leading-relaxed">
+
+                        Titan is being developed as a systems-level technology platform rather
+                        than a conventional SaaS wrapper. Its design spans local AI inference,
+                        networking, cryptographic auditability, edge execution, orchestration,
+                        and hardware-aware runtimes.
+
+                    </p>
+
+                    <p class="text-sm text-gray-300 leading-relaxed">
+
+                        The central thesis is simple:
+
+                        <strong class="text-white">
+                            intelligent infrastructure should be able to execute locally,
+                            remain verifiable, and reduce dependence on centralized cloud infrastructure.
+                        </strong>
+
+                    </p>
+
+                </div>
+
+
+                <div class="p-7 rounded-2xl glass-card-titan border border-cyan-500/30 space-y-5">
+
+                    <h4 class="text-xl font-bold text-white flex items-center gap-2">
+
+                        <i data-lucide="rocket" class="text-cyan-400 w-5 h-5"></i>
+
+                        What is missing?
+
+                    </h4>
+
+                    <p class="text-sm text-gray-300 leading-relaxed">
+
+                        The technical foundation is only one side of building a company.
+
+                        The next stage requires disciplined commercialization:
+
+                    </p>
+
+                    <ul class="space-y-3 text-sm text-gray-300">
+
+                        <li class="flex gap-3">
+                            <span class="text-cyan-400">01</span>
+                            <span>Product positioning and packaging</span>
+                        </li>
+
+                        <li class="flex gap-3">
+                            <span class="text-cyan-400">02</span>
+                            <span>Customer discovery and sales</span>
+                        </li>
+
+                        <li class="flex gap-3">
+                            <span class="text-cyan-400">03</span>
+                            <span>Marketing and distribution</span>
+                        </li>
+
+                        <li class="flex gap-3">
+                            <span class="text-cyan-400">04</span>
+                            <span>Operational and financial stability</span>
+                        </li>
+
+                        <li class="flex gap-3">
+                            <span class="text-cyan-400">05</span>
+                            <span>Strategic partnerships and capital allocation</span>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- ARCHITECTURE -->
+    <!-- ========================================================= -->
+
+    <section id="architecture" class="py-16 border-b border-gray-800/60">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="mb-10">
+
+                <h2 class="text-xs font-mono text-cyan-400 tracking-widest uppercase mb-2">
+                    // 02. FULL-STACK STRATIGRAPHY
+                </h2>
+
+                <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                    System Topological Map
+                </h3>
+
+            </div>
+
+
+            <div class="space-y-3 font-mono text-xs max-w-5xl mx-auto">
+
+
+                <div class="p-5 rounded-xl glass-panel border border-purple-800/40 flex items-center justify-between gap-4">
+
+                    <div class="flex items-center gap-4">
+
+                        <span class="w-12 text-purple-400 font-bold">
+                            L7
+                        </span>
+
+                        <div>
+
+                            <span class="text-white font-bold block text-sm">
+                                Sovereign Control Plane & Applications
+                            </span>
+
+                            <span class="text-gray-400 text-[11px]">
+                                TitanOS, TITAN NOVA, JustUs AI, Astra Media, InmatePrayerPal, TitanUp.js
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <span class="px-2 py-1 rounded bg-purple-950 text-purple-300 text-[10px]">
+                        APP
+                    </span>
+
+                </div>
+
+
+                <div class="p-5 rounded-xl glass-panel border border-teal-800/40 flex items-center justify-between gap-4">
+
+                    <div class="flex items-center gap-4">
+
+                        <span class="w-12 text-teal-400 font-bold">
+                            L4-L6
+                        </span>
+
+                        <div>
+
+                            <span class="text-white font-bold block text-sm">
+                                Compliance & Cryptographic Audit
+                            </span>
+
+                            <span class="text-gray-400 text-[11px]">
+                                Rhea consent FSM, identity services, audit chains and policy enforcement
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <span class="px-2 py-1 rounded bg-teal-950 text-teal-300 text-[10px]">
+                        GOVERNANCE
+                    </span>
+
+                </div>
+
+
+                <div class="p-5 rounded-xl glass-panel border border-cyan-800/40 flex items-center justify-between gap-4">
+
+                    <div class="flex items-center gap-4">
+
+                        <span class="w-12 text-cyan-400 font-bold">
+                            L3
+                        </span>
+
+                        <div>
+
+                            <span class="text-white font-bold block text-sm">
+                                WECANMESH Peer-to-Peer Overlay
+                            </span>
+
+                            <span class="text-gray-400 text-[11px]">
+                                WireGuard, Headscale, policy-aware routing and peer networking
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <span class="px-2 py-1 rounded bg-cyan-950 text-cyan-300 text-[10px]">
+                        MESH
+                    </span>
+
+                </div>
+
+
+                <div class="p-5 rounded-xl glass-panel border border-cyan-800/40 flex items-center justify-between gap-4">
+
+                    <div class="flex items-center gap-4">
+
+                        <span class="w-12 text-cyan-400 font-bold">
+                            L0-L2
+                        </span>
+
+                        <div>
+
+                            <span class="text-white font-bold block text-sm">
+                                Titan Runtime & Inference Layer
+                            </span>
+
+                            <span class="text-gray-400 text-[11px]">
+                                Zig kernels, SIMD optimization, quantization, KV-cache and execution runtimes
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <span class="px-2 py-1 rounded bg-cyan-950 text-cyan-300 text-[10px]">
+                        RUNTIME
+                    </span>
+
+                </div>
+
+
+                <div class="p-5 rounded-xl glass-card-titan border border-cyan-400 flex items-center justify-between gap-4 glow-accent">
+
+                    <div class="flex items-center gap-4">
+
+                        <span class="w-12 text-cyan-400 font-bold">
+                            L0
+                        </span>
+
+                        <div>
+
+                            <span class="text-white font-bold block text-sm">
+                                Physical Hardware
+                            </span>
+
+                            <span class="text-gray-400 text-[11px]">
+                                ARM64 / x86_64 commodity hardware, Android edge devices and local execution
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <span class="px-2.5 py-1 rounded bg-cyan-400 text-black font-bold text-[10px]">
+                        SILICON
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- CORE PRIMITIVES -->
+    <!-- ========================================================= -->
+
+    <section id="primitives" class="py-16 border-b border-gray-800/60 bg-gray-950/40">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="mb-10">
+
+                <h2 class="text-xs font-mono text-cyan-400 tracking-widest uppercase mb-2">
+                    // 03. CORE TECHNICAL PRIMITIVES
+                </h2>
+
+                <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+                    The Technical Foundation
+                </h3>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+
+                <!-- COMPUTATION -->
+
+                <div class="p-6 rounded-2xl glass-panel border border-gray-800 space-y-3">
+
+                    <span class="text-cyan-400 font-mono text-xs font-bold">
+                        // 01. COMPUTATIONAL MATH
+                    </span>
+
+                    <h4 class="text-lg font-bold text-white">
+                        Titan Kernels
+                    </h4>
+
+                    <p class="text-xs text-gray-300 leading-relaxed">
+
+                        Hardware-aware kernels designed around SIMD execution,
+                        quantized inference and reduced memory movement across
+                        supported CPU architectures.
+
+                    </p>
+
+                </div>
+
+
+                <!-- GOVERNANCE -->
+
+                <div class="p-6 rounded-2xl glass-panel border border-gray-800 space-y-3">
+
+                    <span class="text-teal-400 font-mono text-xs font-bold">
+                        // 02. COMPLIANCE & CONSENT
+                    </span>
+
+                    <h4 class="text-lg font-bold text-white">
+                        Rhea Governance Layer
+                    </h4>
+
+                    <p class="text-xs text-gray-300 leading-relaxed">
+
+                        Deterministic state-machine based authorization,
+                        consent management, identity handling and policy
+                        enforcement.
+
+                    </p>
+
+                </div>
+
+
+                <!-- NETWORK -->
+
+                <div class="p-6 rounded-2xl glass-panel border border-gray-800 space-y-3">
+
+                    <span class="text-purple-400 font-mono text-xs font-bold">
+                        // 03. NETWORK OVERLAY
+                    </span>
+
+                    <h4 class="text-lg font-bold text-white">
+                        WECANMESH
+                    </h4>
+
+                    <p class="text-xs text-gray-300 leading-relaxed">
+
+                        Peer-to-peer networking architecture using encrypted
+                        tunnels and private coordination infrastructure for
+                        distributed edge nodes.
+
+                    </p>
+
+                </div>
+
+
+                <!-- CRYPTO -->
+
+                <div class="p-6 rounded-2xl glass-panel border border-gray-800 space-y-3">
+
+                    <span class="text-amber-400 font-mono text-xs font-bold">
+                        // 04. CRYPTOGRAPHIC AUDIT
+                    </span>
+
+                    <h4 class="text-lg font-bold text-white">
+                        Verifiable Execution
+                    </h4>
+
+                    <p class="text-xs text-gray-300 leading-relaxed">
+
+                        Cryptographic commitments, signed event records and
+                        append-oriented audit structures designed to provide
+                        tamper-evident operational history.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- EDGE -->
+    <!-- ========================================================= -->
+
+    <section id="bypasses" class="py-16 border-b border-gray-800/60">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="mb-10">
+
+                <h2 class="text-xs font-mono text-cyan-400 tracking-widest uppercase mb-2">
+                    // 04. EDGE EXECUTION
+                </h2>
+
+                <h3 class="text-2xl sm:text-3xl font-bold text-white">
+                    Local-first infrastructure
+                </h3>
+
+            </div>
+
+
+            <div class="p-8 rounded-2xl glass-panel border border-cyan-900/40">
+
+                <div class="flex items-center gap-3 mb-5">
+
+                    <i data-lucide="smartphone" class="text-cyan-400 w-6 h-6"></i>
+
+                    <h4 class="text-xl font-bold text-white">
+                        Commodity Hardware as an AI Edge
+                    </h4>
+
+                </div>
+
+                <p class="text-gray-300 text-sm leading-relaxed">
+
+                    Titan is designed to make useful AI and distributed computing
+                    capabilities viable on hardware that does not require a
+                    hyperscaler-grade data center.
+
+                    The architecture emphasizes local execution, reduced dependency
+                    on external services, and deployment across Linux, ARM64,
+                    x86_64 and Android-oriented environments where technically feasible.
+
+                </p>
+
+
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+
+                    <div class="p-5 bg-black/40 rounded-xl border border-gray-800">
+
+                        <span class="text-cyan-400 font-bold block mb-2">
+                            LOCAL
+                        </span>
+
+                        <span class="text-sm text-gray-300">
+                            Compute closer to the user and data source.
+                        </span>
+
+                    </div>
+
+
+                    <div class="p-5 bg-black/40 rounded-xl border border-gray-800">
+
+                        <span class="text-teal-400 font-bold block mb-2">
+                            SOVEREIGN
+                        </span>
+
+                        <span class="text-sm text-gray-300">
+                            Reduce dependence on external infrastructure.
+                        </span>
+
+                    </div>
+
+
+                    <div class="p-5 bg-black/40 rounded-xl border border-gray-800">
+
+                        <span class="text-purple-400 font-bold block mb-2">
+                            DISTRIBUTED
+                        </span>
+
+                        <span class="text-sm text-gray-300">
+                            Connect capable nodes into a coordinated substrate.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- STRATEGIC OPPORTUNITY -->
+    <!-- ========================================================= -->
+
+    <section id="opportunity" class="py-20 border-b border-gray-800/60 bg-gray-950/40">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="max-w-4xl mb-10">
+
+                <h2 class="text-xs font-mono text-cyan-400 tracking-widest uppercase mb-2">
+                    // 05. STRATEGIC OPPORTUNITY
+                </h2>
+
+                <h3 class="text-3xl sm:text-4xl font-bold text-white">
+                    Engineer + Operator = Company
+                </h3>
+
+                <p class="mt-5 text-gray-400 leading-relaxed">
+
+                    The founder brings the engineering foundation and technical architecture.
+                    A strategic partner can bring complementary experience in software,
+                    commercialization, positioning, relationships, capital allocation,
+                    marketing and operational execution.
+
+                </p>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+
+                <!-- FOUNDER -->
+
+                <div class="p-7 rounded-2xl glass-panel border border-gray-800">
+
+                    <div class="flex items-center gap-3 mb-5">
+
+                        <div class="h-10 w-10 rounded-lg bg-cyan-950 flex items-center justify-center">
+                            <i data-lucide="code-2" class="text-cyan-400"></i>
+                        </div>
+
+                        <div>
+
+                            <h4 class="font-bold text-white">
+                                Founder Contribution
+                            </h4>
+
+                            <span class="text-xs text-gray-500 font-mono">
+                                TECHNICAL FOUNDATION
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <ul class="space-y-3 text-sm text-gray-300">
+
+                        <li>Existing technical architecture</li>
+
+                        <li>Existing repositories and development work</li>
+
+                        <li>Systems engineering and implementation</li>
+
+                        <li>Product concepts and technical roadmap</li>
+
+                        <li>Infrastructure and prototypes</li>
+
+                        <li>Long-term technical vision</li>
+
+                    </ul>
+
+                </div>
+
+
+                <!-- PARTNER -->
+
+                <div class="p-7 rounded-2xl glass-card-titan border border-cyan-500/30">
+
+                    <div class="flex items-center gap-3 mb-5">
+
+                        <div class="h-10 w-10 rounded-lg bg-purple-950 flex items-center justify-center">
+                            <i data-lucide="briefcase-business" class="text-purple-400"></i>
+                        </div>
+
+                        <div>
+
+                            <h4 class="font-bold text-white">
+                                Strategic Partner Contribution
+                            </h4>
+
+                            <span class="text-xs text-gray-500 font-mono">
+                                COMMERCIALIZATION + CAPITAL
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <ul class="space-y-3 text-sm text-gray-300">
+
+                        <li>Go-to-market strategy</li>
+
+                        <li>Marketing and customer acquisition</li>
+
+                        <li>Business development and relationships</li>
+
+                        <li>Operational stabilization</li>
+
+                        <li>Strategic software-industry experience</li>
+
+                        <li>Capital for commercialization and runway</li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- INVESTMENT PROPOSAL -->
+    <!-- ========================================================= -->
+
+    <section class="py-20 border-b border-gray-800/60">
+
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="p-8 sm:p-12 rounded-3xl glass-card-titan investment-glow border border-cyan-500/30">
+
+                <div class="text-center">
+
+                    <span class="text-xs font-mono text-cyan-400 tracking-widest">
+                        OPENING STRATEGIC PROPOSAL
+                    </span>
+
+                    <h2 class="mt-3 text-4xl sm:text-5xl font-extrabold text-white">
+                        $50,000
+                    </h2>
+
+                    <p class="mt-2 text-xl text-gray-300">
+                        Proposed investment for
+                        <strong class="text-cyan-400">
+                            30% equity
+                        </strong>
+                    </p>
+
+                </div>
+
+
+                <div class="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
+
+                    <div class="p-5 bg-black/40 rounded-xl border border-gray-800 text-center">
+
+                        <span class="text-cyan-400 font-mono text-xs block mb-2">
+                            CAPITAL
+                        </span>
+
+                        <span class="text-white font-bold">
+                            $50K
+                        </span>
+
+                        <p class="text-xs text-gray-500 mt-2">
+                            Initial capital target
+                        </p>
+
+                    </div>
+
+
+                    <div class="p-5 bg-black/40 rounded-xl border border-gray-800 text-center">
+
+                        <span class="text-purple-400 font-mono text-xs block mb-2">
+                            EQUITY
+                        </span>
+
+                        <span class="text-white font-bold">
+                            30%
+                        </span>
+
+                        <p class="text-xs text-gray-500 mt-2">
+                            Opening ownership proposal
+                        </p>
+
+                    </div>
+
+
+                    <div class="p-5 bg-black/40 rounded-xl border border-gray-800 text-center">
+
+                        <span class="text-teal-400 font-mono text-xs block mb-2">
+                            STRUCTURE
+                        </span>
+
+                        <span class="text-white font-bold">
+                            NEGOTIABLE
+                        </span>
+
+                        <p class="text-xs text-gray-500 mt-2">
+                            Open to counter-proposals
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="mt-10 p-6 rounded-2xl bg-black/50 border border-cyan-900/60">
+
+                    <h3 class="text-lg font-bold text-white mb-4">
+                        The proposal is intentionally open.
+                    </h3>
+
+                    <p class="text-sm text-gray-300 leading-relaxed">
+
+                        The $50,000 for 30% structure is an opening proposal,
+                        not an ultimatum.
+
+                        The goal is to find a structure that makes sense for both
+                        parties based on the capital contributed, strategic involvement,
+                        responsibilities, valuation, milestones and long-term contribution.
+
+                    </p>
+
+                    <p class="mt-4 text-sm text-gray-300 leading-relaxed">
+
+                        A qualified strategic partner is invited to
+                        <strong class="text-white">
+                            counter-propose.
+                        </strong>
+
+                        The objective is not simply to raise money.
+
+                        The objective is to create the conditions necessary to turn
+                        existing technical infrastructure into a sustainable,
+                        revenue-generating company.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- REPOSITORY / IP ACCESS -->
+    <!-- ========================================================= -->
+
+    <section class="py-20 border-b border-gray-800/60 bg-gray-950/40">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="max-w-4xl mb-10">
+
+                <h2 class="text-xs font-mono text-cyan-400 tracking-widest uppercase mb-2">
+                    // 06. TECHNICAL PORTFOLIO
+                </h2>
+
+                <h3 class="text-3xl sm:text-4xl font-bold text-white">
+                    The opportunity extends beyond Titan.
+                </h3>
+
+                <p class="mt-5 text-gray-400 leading-relaxed">
+
+                    Titan is the current focal platform.
+
+                    The broader engineering portfolio includes additional repositories,
+                    prototypes, infrastructure components, runtimes, networking systems,
+                    AI tooling and experimental projects.
+
+                </p>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+
+                <div class="p-6 rounded-2xl glass-panel border border-gray-800">
+
+                    <i data-lucide="database" class="text-cyan-400 mb-4"></i>
+
+                    <h4 class="text-lg font-bold text-white">
+                        Existing Repositories
+                    </h4>
+
+                    <p class="mt-3 text-sm text-gray-400 leading-relaxed">
+
+                        Access to designated repositories can provide a strategic partner
+                        with visibility into the broader technical portfolio and potential
+                        product opportunities.
+
+                    </p>
+
+                </div>
+
+
+                <div class="p-6 rounded-2xl glass-panel border border-gray-800">
+
+                    <i data-lucide="layers-3" class="text-purple-400 mb-4"></i>
+
+                    <h4 class="text-lg font-bold text-white">
+                        Future Product Surface
+                    </h4>
+
+                    <p class="mt-3 text-sm text-gray-400 leading-relaxed">
+
+                        Some projects may develop into standalone products,
+                        supporting infrastructure, intellectual property or
+                        complementary businesses.
+
+                    </p>
+
+                </div>
+
+
+                <div class="p-6 rounded-2xl glass-panel border border-gray-800">
+
+                    <i data-lucide="shield-check" class="text-teal-400 mb-4"></i>
+
+                    <h4 class="text-lg font-bold text-white">
+                        Controlled Access
+                    </h4>
+
+                    <p class="mt-3 text-sm text-gray-400 leading-relaxed">
+
+                        Repository and IP access would be governed by ownership,
+                        confidentiality, security, licensing and definitive
+                        partnership agreements.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="mt-8 p-6 rounded-2xl border border-gray-800 bg-black/30">
+
+                <p class="text-xs text-gray-400 leading-relaxed">
+
+                    <strong class="text-gray-200">
+                        Important:
+                    </strong>
+
+                    No statement on this page automatically transfers ownership of,
+                    licenses, assigns, or grants unrestricted access to any repository,
+                    patent, source code, trade secret, domain, trademark, dataset,
+                    infrastructure account or other intellectual property.
+
+                    Specific rights and access would be established in definitive written agreements.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- ROI FRAMEWORK -->
+    <!-- ========================================================= -->
+
+    <section id="roi" class="py-20 border-b border-gray-800/60">
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="text-center max-w-4xl mx-auto">
+
+                <span class="text-xs font-mono text-cyan-400 tracking-widest">
+                    // 07. ROI FRAMEWORK
+                </span>
+
+                <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold text-white">
+                    The investment thesis
+                </h2>
+
+                <p class="mt-5 text-gray-400 leading-relaxed">
+
+                    The proposed capital is intended to move the company from
+                    technically capable to commercially operational.
+
+                </p>
+
+            </div>
+
+
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+
+
+                <div class="p-6 rounded-2xl glass-panel border border-gray-800">
+
+                    <span class="text-cyan-400 font-mono text-xs">
+                        01
+                    </span>
+
+                    <h3 class="mt-3 font-bold text-white">
+                        Runway
+                    </h3>
+
+                    <p class="mt-2 text-sm text-gray-400">
+                        Create enough financial stability to sustain development
+                        while commercial operations begin.
+                    </p>
+
+                </div>
+
+
+                <div class="p-6 rounded-2xl glass-panel border border-gray-800">
+
+                    <span class="text-purple-400 font-mono text-xs">
+                        02
+                    </span>
+
+                    <h3 class="mt-3 font-bold text-white">
+                        Distribution
+                    </h3>
+
+                    <p class="mt-2 text-sm text-gray-400">
+                        Invest in marketing, customer acquisition, partnerships
+                        and market validation.
+                    </p>
+
+                </div>
+
+
+                <div class="p-6 rounded-2xl glass-panel border border-gray-800">
+
+                    <span class="text-teal-400 font-mono text-xs">
+                        03
+                    </span>
+
+                    <h3 class="mt-3 font-bold text-white">
+                        Productization
+                    </h3>
+
+                    <p class="mt-2 text-sm text-gray-400">
+                        Convert existing engineering work into clearly defined,
+                        sellable products and services.
+                    </p>
+
+                </div>
+
+
+                <div class="p-6 rounded-2xl glass-panel border border-gray-800">
+
+                    <span class="text-amber-400 font-mono text-xs">
+                        04
+                    </span>
+
+                    <h3 class="mt-3 font-bold text-white">
+                        Enterprise Value
+                    </h3>
+
+                    <p class="mt-2 text-sm text-gray-400">
+                        Build revenue, customers, partnerships and intellectual
+                        property that may increase the company's future value.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- CORRECTED ROI DISCLAIMER -->
+
+            <div class="mt-10 p-7 rounded-2xl bg-amber-950/20 border border-amber-800/40">
+
+                <div class="flex items-start gap-4">
+
+                    <i data-lucide="triangle-alert" class="text-amber-400 w-6 h-6 shrink-0 mt-1"></i>
+
+                    <div>
+
+                        <h3 class="text-lg font-bold text-amber-300">
+                            ROI / Investment Disclaimer
+                        </h3>
+
+                        <p class="mt-3 text-sm text-gray-300 leading-relaxed">
+
+                            This document describes a proposed strategic investment opportunity
+                            and business thesis. It does
+
+                            <strong class="text-white">
+                                not guarantee, represent, or promise any specific return on investment,
+                                revenue level, valuation, profitability, liquidity event, acquisition,
+                                or other financial outcome.
+                            </strong>
+
+                        </p>
+
+                        <p class="mt-3 text-sm text-gray-300 leading-relaxed">
+
+                            Any references to potential ROI, enterprise value, market opportunity,
+                            cost savings, commercialization potential or future products are
+                            illustrative and dependent upon execution, market conditions,
+                            customer adoption, competition, capital requirements and numerous
+                            other factors that cannot be predicted with certainty.
+
+                        </p>
+
+                        <p class="mt-3 text-sm text-gray-300 leading-relaxed">
+
+                            The proposed
+
+                            <strong class="text-white">
+                                $50,000 for 30% equity
+                            </strong>
+
+                            is an opening, negotiable proposal rather than a representation
+                            of guaranteed company value or investment return.
+
+                            Any investment, equity issuance, ownership rights, governance rights,
+                            access to intellectual property, repository access, compensation,
+                            milestones or other economic terms would be subject to mutually
+                            agreed definitive written agreements and appropriate legal,
+                            financial and tax review.
+
+                        </p>
+
+                        <p class="mt-3 text-sm text-gray-300 leading-relaxed">
+
+                            <strong class="text-amber-300">
+                                Past engineering progress is not a guarantee of future commercial performance.
+                            </strong>
+
+                            Prospective investors or strategic partners should conduct their own
+                            technical, financial, legal, intellectual-property and market due diligence.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- IP -->
+    <!-- ========================================================= -->
+
+    <section id="ip" class="py-16 border-b border-gray-800/60 bg-gray-950/40">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="mb-10">
+
+                <h2 class="text-xs font-mono text-cyan-400 tracking-widest uppercase mb-2">
+                    // 08. INTELLECTUAL PROPERTY
+                </h2>
+
+                <h3 class="text-2xl sm:text-3xl font-bold text-white">
+                    Technical assets and ownership
+                </h3>
+
+            </div>
+
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+
+                <div class="p-7 rounded-2xl glass-panel border border-gray-800">
+
+                    <h4 class="text-lg font-bold text-white mb-5">
+                        Portfolio
+                    </h4>
+
+                    <div class="space-y-3 font-mono text-xs">
+
+                        <div class="p-3 bg-black/50 rounded-lg border border-gray-800 flex justify-between gap-4">
+                            <span class="text-cyan-400">
+                                JCH-2026-001
+                            </span>
+                            <span class="text-gray-300 text-right">
+                                Pedersen ZK Agent Audit Chain
+                            </span>
+                        </div>
+
+                        <div class="p-3 bg-black/50 rounded-lg border border-gray-800 flex justify-between gap-4">
+                            <span class="text-cyan-400">
+                                JCH-2026-004
+                            </span>
+                            <span class="text-gray-300 text-right">
+                                Umbrella Sovereign Cloud Synthesis
+                            </span>
+                        </div>
+
+                        <div class="p-3 bg-black/50 rounded-lg border border-gray-800 flex justify-between gap-4">
+                            <span class="text-cyan-400">
+                                JCH-2026-006
+                            </span>
+                            <span class="text-gray-300 text-right">
+                                WECANMESH Key-Rotation Overlay
+                            </span>
+                        </div>
+
+                        <div class="p-3 bg-black/50 rounded-lg border border-gray-800 flex justify-between gap-4">
+                            <span class="text-cyan-400">
+                                JCH-2026-009/010
+                            </span>
+                            <span class="text-gray-300 text-right">
+                                TitanUp.js Runtime
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="p-7 rounded-2xl glass-card-titan border border-cyan-500/30">
+
+                    <h4 class="text-lg font-bold text-white mb-5">
+                        Strategic Access
+                    </h4>
+
+                    <p class="text-sm text-gray-300 leading-relaxed">
+
+                        A strategic partner may receive access to selected technical
+                        repositories, development environments, documentation,
+                        product roadmaps and other company assets as appropriate
+                        to their role.
+
+                    </p>
+
+                    <p class="mt-4 text-sm text-gray-300 leading-relaxed">
+
+                        Access is not synonymous with ownership.
+
+                        The specific scope of access, licensing rights, voting rights,
+                        intellectual-property rights, confidentiality obligations and
+                        security controls would be established through definitive agreements.
+
+                    </p>
+
+                    <div class="mt-6 p-4 bg-black/60 rounded-xl border border-cyan-900/50">
+
+                        <span class="text-xs font-mono text-cyan-400">
+                            PRINCIPLE
+                        </span>
+
+                        <p class="mt-2 text-sm text-white font-medium">
+                            Strategic access should create strategic leverage without
+                            compromising the integrity of the underlying IP.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- CLOSING -->
+    <!-- ========================================================= -->
+
+    <section class="py-20">
+
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+
+            <span class="text-xs font-mono text-cyan-400 tracking-widest">
+                TITAN SOVEREIGN SUBSTRATE
+            </span>
+
+            <h2 class="mt-4 text-4xl sm:text-5xl font-extrabold text-white">
+                The infrastructure exists.
+            </h2>
+
+            <p class="mt-5 text-lg text-gray-400 leading-relaxed">
+
+                The next question is whether the right technical and commercial
+                leadership can turn that infrastructure into a company.
+
+            </p>
+
+            <div class="mt-8 inline-flex items-center gap-3 px-6 py-3 rounded-xl border border-cyan-500/30 bg-cyan-950/20">
+
+                <i data-lucide="arrow-right" class="text-cyan-400"></i>
+
+                <span class="font-mono text-sm text-cyan-300">
+                    BUILD → VALIDATE → DISTRIBUTE → SCALE
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ========================================================= -->
+    <!-- FOOTER -->
+    <!-- ========================================================= -->
+
+    <footer class="py-8 bg-black border-t border-gray-900 text-xs text-gray-500 font-mono">
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+
+                <div class="text-center sm:text-left">
+
+                    &copy; 2026 Titan Universal AI, LLC.
+
+                    <span class="block mt-1">
+                        Technical founder and architect: Julius Cameron Hill.
+                    </span>
+
+                </div>
+
+
+                <div class="flex gap-4 flex-wrap justify-center">
+
+                    <span>
+                        NASHVILLE, TN
+                    </span>
+
+                    <span>
+                        &bull;
+                    </span>
+
+                    <span>
+                        TITANUAI.COM
+                    </span>
+
+                    <span>
+                        &bull;
+                    </span>
+
+                    <span>
+                        CONFIDENTIAL
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script>
+        lucide.createIcons();
+    </script>
+
+</body>
+</html>
